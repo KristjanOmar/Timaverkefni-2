@@ -66,7 +66,7 @@ void setup()
 	bool resistorsOnSegments = true;
 
 	//Initialize sevseg object. Uncomment second line if you use common cathode 7 segment
-  //sevseg.begin(COMMON_ANODE, numDigits, digitPins, segmentPins, resistorsOnSegments);
+	//sevseg.begin(COMMON_ANODE, numDigits, digitPins, segmentPins, resistorsOnSegments);
 	sevseg.begin(COMMON_CATHODE, numDigits, digitPins, segmentPins, resistorsOnSegments);
 
 	sevseg.setBrightness(90);
