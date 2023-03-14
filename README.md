@@ -10,7 +10,7 @@
 #include "SevSeg.h"
 SevSeg sevseg;
 
-int i = 0
+int i = 0;
 
 void setup()
 {
@@ -37,7 +37,7 @@ void loop()
   sevseg.setNumber(i);
   sevseg.refreshDisplay(); 
   delay(2000);
-  i++
+  i++;
 }
 ```
 
