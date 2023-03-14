@@ -34,7 +34,7 @@ void setup()
 void loop()
 { 
    //Display numbers one by one with 2 seconds delay
-  sevseg.setNumber(i);
+  sevseg.setNumber(i % 10);
   sevseg.refreshDisplay(); 
   delay(2000);
   i++;
