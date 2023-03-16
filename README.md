@@ -4,6 +4,8 @@
 
 ### 1.
 
+![7-Segment](https://user-images.githubusercontent.com/117899282/225649804-58b2c15a-bc3e-4c2a-91c3-b9d4843858e3.jpg "7-Segment display")
+
 ### 2.
 
 ```cpp
@@ -143,9 +145,7 @@ void loop()
 
 ## 3. 7-Segment fjórir tölustafir
 
-![7-Segment](https://user-images.githubusercontent.com/117899282/225647983-35553049-f585-434e-a41d-b053a8ad54a9.jpg "7-Segment display")
-
-![7-Segment](C:\Users\kriss\Downloads\20230315_091022.jpg "7-Segment display")
+![Fjórir](https://user-images.githubusercontent.com/117899282/225647983-35553049-f585-434e-a41d-b053a8ad54a9.jpg "7-Segment fjórir tölustafir")
 
 ```cpp
 #include "SevSeg.h"
@@ -170,6 +170,9 @@ void loop(){
 ```
 
 ## 4. BOBA
+
+[![Tímasprengja](https://user-images.githubusercontent.com/117899282/225652739-88a1997e-d17d-495e-b12f-d292c3c61236.jpg) "Tímasprengja"]
+(https://user-images.githubusercontent.com/117899282/225651664-65745e77-d3cb-410f-9242-f6da13bf49ba.mp4)
 
 ```cpp
 #include "SevSeg.h"
