@@ -143,7 +143,8 @@ void loop()
 
 ## 3. 7-Segment fjórir tölustafir
 
-![7-Segment](C:\Users\kriss\Downloads\20230315_091022.jpg "7-Segment display")
+![7-Segment](https://user-images.githubusercontent.com/117899282/225647983-35553049-f585-434e-a41d-b053a8ad54a9.jpg "7-Segment display")
+
 
 ```cpp
 #include "SevSeg.h"
