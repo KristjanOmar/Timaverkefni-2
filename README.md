@@ -171,8 +171,7 @@ void loop(){
 
 ## 4. BOBA
 
-[![Tímasprengja](https://user-images.githubusercontent.com/117899282/225652739-88a1997e-d17d-495e-b12f-d292c3c61236.jpg) "Tímasprengja"]
-(https://user-images.githubusercontent.com/117899282/225651664-65745e77-d3cb-410f-9242-f6da13bf49ba.mp4)
+[![Tímasprengja](https://user-images.githubusercontent.com/117899282/225652739-88a1997e-d17d-495e-b12f-d292c3c61236.jpg) "Tímasprengja"](https://user-images.githubusercontent.com/117899282/225651664-65745e77-d3cb-410f-9242-f6da13bf49ba.mp4)
 
 ```cpp
 #include "SevSeg.h"
