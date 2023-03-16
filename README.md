@@ -190,8 +190,6 @@ int endahljod = 1;
 const int buzzerPin = A4;
 
 void setup() {
-  Serial.begin(9600);
-
   pinMode(buzzerPin,OUTPUT);
   byte numDigits = 4;
   byte digitPins[] = {10, 11, 12, 13};
