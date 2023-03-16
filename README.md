@@ -140,3 +140,104 @@ void loop()
   sidasta_takka_stada = takka_stada;
 }
 ```
+
+## 3. 7-Segment fjórir tölustafir
+
+![7-Segment](C:\Users\kriss\Downloads\20230315_091022.jpg "7-Segment display")
+
+```cpp
+#include "SevSeg.h"
+SevSeg sevseg; 
+
+void setup(){
+  byte numDigits = 4;
+  byte digitPins[] = {10, 11, 12, 13};
+  byte segmentPins[] = {9, 2, 3, 5, 6, 8, 7, 4};
+
+  bool resistorsOnSegments = true; 
+  bool updateWithDelaysIn = true;
+  byte hardwareConfig = COMMON_CATHODE; 
+  sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
+  sevseg.setBrightness(90);
+}
+
+void loop(){
+    sevseg.setNumber(1234, 3);
+    sevseg.refreshDisplay(); 
+}
+```
+
+## 4. BOBA
+
+```cpp
+#include "SevSeg.h"
+SevSeg sevseg;
+
+float displayTimeSecs = 1;
+float displayTime = (displayTimeSecs * 5000);
+long buzzerFrequency = 500;
+float buzzerDuration = (displayTimeSecs * 100);
+long startNumber = 60;
+long endNumber = 0;
+
+int fani = 1;
+int endahljod = 1;
+
+const int buzzerPin = A4;
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(buzzerPin,OUTPUT);
+  byte numDigits = 4;
+  byte digitPins[] = {10, 11, 12, 13};
+  byte segmentPins[] = {9, 2, 3, 5, 6, 8, 7, 4};
+  
+  bool resistorsOnSegments = false;
+  byte hardwareConfig = COMMON_CATHODE;
+  bool updateWithDelays = false;
+  bool leadingZeros = true;
+  bool disableDecPoint = true;
+  
+  sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments,
+  updateWithDelays, leadingZeros, disableDecPoint);
+  sevseg.setBrightness(90);
+
+  pinMode(A2, INPUT_PULLUP);
+  pinMode(A3, INPUT_PULLUP);
+}
+
+void loop() {
+
+  if (startNumber >= endNumber) {
+    for (long i = 0; i <= displayTime; i++){
+      sevseg.setNumber(startNumber,0);
+      sevseg.refreshDisplay();
+    }
+
+    if (digitalRead(A3) == HIGH) {
+      startNumber = endNumber;
+    } else if (digitalRead(A2) == HIGH && fani == 1) {
+      displayTime = displayTime / 2;
+      fani -= 1;
+    }
+  }
+
+sevseg.setNumber(1234,0);
+sevseg.refreshDisplay();
+
+if (startNumber > endNumber) {
+  tone(buzzerPin,buzzerFrequency,buzzerDuration);
+  startNumber --;
+} else if (endahljod == 1) {
+    for (int i = 0; i < 6; i++) {
+      tone(buzzerPin,buzzerFrequency + i * 100,buzzerDuration);
+      sevseg.setNumber(startNumber,0);
+      sevseg.refreshDisplay();
+      delay(buzzerDuration);
+    }
+    startNumber --;
+    endahljod = 0;
+  }
+}
+```
